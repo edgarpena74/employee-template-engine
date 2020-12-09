@@ -37,6 +37,28 @@ const render = require("./lib/htmlRenderer");
 
 const employeeArr = [];
 
+function getEmployeeTitle(){
+    inquirer.prompt([
+    {
+      type: "list",
+      message: "What is this employee's job title?",
+      name: "titleInput",
+      choices: ["Engineer", "Manager", "Intern"],
+    },
+  ])
+    .then((res) => {
+    console.log(res);
+    if(res.titleInput === "Manager") {
+        addManager()
+    } else if(res.titleInput === "Engineer") {
+        addEngineer()
+    } else {
+        addIntern()
+    }
+    })
+}
+
+
 function addManager () {
         inquirer.prompt([
         {
@@ -127,6 +149,4 @@ function addIntern () {
     })
 }
 
-addManager()
-addEngineer()
-addIntern()
+getEmployeeTitle()
