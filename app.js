@@ -38,33 +38,33 @@ const render = require("./lib/htmlRenderer");
 const employeeArr = [];
 
 function addManager () {
-    inquirer.prompt([
-    {
-        type: "input",
-        message: "Enter Manager name.",
-        name: "managerName",
-    },
-    {
-        type: "input",
-        message: "Enter Manager ID.",
-        name: "managerID",
-    },
-    {
-        type: "input",
-        message: "Enter Manager email.",
-        name: "managerEmail",
-    },
-    {
-        type: "input",
-        message: "Enter Manager office number.",
-        name: "managerOfficeNum",
-    },
-  ])
-  .then((managerRes) => {
-    console.log(managerRes);
-    const newManager = new Manager(managerRes.managerName, managerRes.managerID, managerRes.managerEmail, managerRes.managerOfficeNum);
-    employeeArr.push(newManager);
- })
+        inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Manager name.",
+            name: "managerName",
+        },
+        {
+            type: "input",
+            message: "Enter Manager ID.",
+            name: "managerID",
+        },
+        {
+            type: "input",
+            message: "Enter Manager email.",
+            name: "managerEmail",
+        },
+        {
+            type: "input",
+            message: "Enter Manager office number.",
+            name: "managerOfficeNum",
+        },
+    ])
+    .then((managerRes) => {
+        console.log(managerRes);
+        const newManager = new Manager(managerRes.managerName, managerRes.managerID, managerRes.managerEmail, managerRes.managerOfficeNum);
+        employeeArr.push(newManager);
+    })
 }
 
 function addEngineer () {
@@ -89,13 +89,44 @@ function addEngineer () {
             message: "Enter Engineer GitHub profile.",
             name: "engineerGithub",
         },
-      ])
-      .then((engineerRes) => {
+    ])
+    .then((engineerRes) => {
         console.log(engineerRes);
         const newEngineer = new Engineer(engineerRes.engineerName, engineerRes.engineerID, engineerRes.engineerEmail, engineerRes.engineerGithub);
         employeeArr.push(newEngineer);
-     })
-    }
+    })
+}
+
+function addIntern () {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Intern name.",
+            name: "internName",
+        },
+        {
+            type: "input",
+            message: "Enter Intern ID.",
+            name: "internID",
+        },
+        {
+            type: "input",
+            message: "Enter Intern email.",
+            name: "internEmail",
+        },
+        {
+            type: "input",
+            message: "Enter Intern's school.",
+            name: "internSchool",
+        },
+    ])
+    .then((internRes) => {
+        console.log(internRes);
+        const newIntern = new Intern(internRes.internName, internRes.internID, internRes.internEmail, internRes.internSchool);
+        employeeArr.push(newIntern);
+    })
+}
 
 addManager()
 addEngineer()
+addIntern()
