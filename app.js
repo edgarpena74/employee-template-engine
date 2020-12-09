@@ -67,4 +67,35 @@ function addManager () {
  })
 }
 
+function addEngineer () {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Engineer name.",
+            name: "engineerName",
+        },
+        {
+            type: "input",
+            message: "Enter Engineer ID.",
+            name: "engineerID",
+        },
+        {
+            type: "input",
+            message: "Enter Engineer email.",
+            name: "engineerEmail",
+        },
+        {
+            type: "input",
+            message: "Enter Engineer GitHub profile.",
+            name: "engineerGithub",
+        },
+      ])
+      .then((engineerRes) => {
+        console.log(engineerRes);
+        const newEngineer = new Engineer(engineerRes.engineerName, engineerRes.engineerID, engineerRes.engineerEmail, engineerRes.engineerGithub);
+        employeeArr.push(newEngineer);
+     })
+    }
+
 addManager()
+addEngineer()
