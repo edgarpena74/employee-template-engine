@@ -18,7 +18,7 @@ Clone this repo to your local device. Run "npm install" in the terminalto instal
 ## Usage  
 Once node modules are installed and the prompts initiate after running "node app.js", users can choose which type of employee they would like to enter. Each type of employee selected will be followed by a short series of prompts to enter in more information about the emplyee. Once all prompts are complete, a "team.html" file will be generated, including all the information the user has input about each employee. Note: ech time the program is ran, a NEW "team.html" file will overwrite any existing one.  
 
-![usage gif](employee-template-gif.gif)
+![usage gif](assets/images/employee-template-gif.gif)
 
 [Link to usage video](https://drive.google.com/file/d/1AXtYKODhLnTfYrWF3tmOnMjTIv-cTi16/view)
 
