@@ -23,7 +23,9 @@ Once node modules are installed and the prompts initiate after running "node app
 [Link to usage video](https://drive.google.com/file/d/1AXtYKODhLnTfYrWF3tmOnMjTIv-cTi16/view)
 
 ## Credits  
-[Form Validation](https://www.w3resource.com/javascript/form/javascript-field-level-form-validation.php)
+
+[Form Validation](https://www.w3resource.com/javascript/form/javascript-field-level-form-validation.php). 
+
 [CSS custom colors](https://flatuicolors.com/)  
 
 ## License  
