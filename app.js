@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { format } = require("path");
 
 const employeeArr = [];
 
@@ -23,7 +24,6 @@ function getEmployeeTitle(){
     },
     ])
     .then((res) => {
-    console.log(res);
     if(res.titleInput === "Manager") {
         addManager()
     } else if(res.titleInput === "Engineer") {
@@ -69,6 +69,16 @@ function addManager () {
         type: "input",
         message: "Enter Manager email.",
         name: "managerEmail",
+        validate: function (managerEmail) {
+            managerFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(managerEmail)
+
+            if (managerFormat) {
+                return true;
+            } else {
+                console.log(" Invalid Email")
+                return false;
+            }
+        }
     },
     {
         type: "input",
@@ -101,6 +111,16 @@ function addEngineer () {
             type: "input",
             message: "Enter Engineer email.",
             name: "engineerEmail",
+            validate: function (engineerEmail) {
+                engineerFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(engineerEmail)
+    
+                if (engineerFormat) {
+                    return true;
+                } else {
+                    console.log(" Invalid Email")
+                    return false;
+                }
+            }
         },
         {
             type: "input",
@@ -109,7 +129,7 @@ function addEngineer () {
         },
     ])
     .then((engineerRes) => {
-        console.log(engineerRes);
+        console.log(engineerRes)
         const newEngineer = new Engineer(engineerRes.engineerName, engineerRes.engineerID, engineerRes.engineerEmail, engineerRes.engineerGithub);
         employeeArr.push(newEngineer);
         addNewEmp()
@@ -133,6 +153,16 @@ function addIntern () {
                 type: "input",
                 message: "Enter Intern email.",
                 name: "internEmail",
+                validate: function (internEmail) {
+                    internFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(internEmail)
+        
+                    if (internFormat) {
+                        return true;
+                    } else {
+                        console.log(" Invalid Email")
+                        return false;
+                    }
+                }
         },
         {
                 type: "input",
@@ -141,7 +171,7 @@ function addIntern () {
         },
     ])
     .then((internRes) => {
-        console.log(internRes);
+        console.log(internRes)
         const newIntern = new Intern(internRes.internName, internRes.internID, internRes.internEmail, internRes.internSchool);
         employeeArr.push(newIntern);
         addNewEmp()
