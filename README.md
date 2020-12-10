@@ -22,6 +22,8 @@ The application uses various html templates for each type of employee and multip
 
 ![usage gif](assets/images/employee-template-gif.gif)
 
+![deployed website example](assets/images/my-team.png)
+
 [Link to usage video](https://drive.google.com/file/d/1AXtYKODhLnTfYrWF3tmOnMjTIv-cTi16/view)
 
 ## Credits  
