@@ -16,12 +16,12 @@ const employeeArr = [];
 function getEmployeeTitle(){
     inquirer.prompt([
     {
-      type: "list",
-      message: "Select employee's job title.",
-      name: "titleInput",
-      choices: ["Engineer", "Manager", "Intern"],
+        type: "list",
+        message: "Select employee's job title.",
+        name: "titleInput",
+        choices: ["Engineer", "Manager", "Intern"],
     },
-  ])
+    ])
     .then((res) => {
     console.log(res);
     if(res.titleInput === "Manager") {
@@ -107,14 +107,14 @@ function addEngineer () {
             message: "Enter Engineer GitHub user name.",
             name: "engineerGithub",
         },
-      ])
-      .then((engineerRes) => {
+    ])
+    .then((engineerRes) => {
         console.log(engineerRes);
         const newEngineer = new Engineer(engineerRes.engineerName, engineerRes.engineerID, engineerRes.engineerEmail, engineerRes.engineerGithub);
         employeeArr.push(newEngineer);
         addNewEmp()
-     })
-    }
+    })
+}
 
 //function with add intern prompts
 function addIntern () {
